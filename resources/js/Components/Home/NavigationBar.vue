@@ -1,5 +1,5 @@
 <template>
-    <div class="w-screen px-5 py-3 bg-secondary shadow">
+    <div class="w-full px-5 py-3 bg-secondary shadow">
         <div class="w-full flex justify-start items-center gap-x-2">
             <div>
                 <img :src="milkTeaIcon" width="50" />
