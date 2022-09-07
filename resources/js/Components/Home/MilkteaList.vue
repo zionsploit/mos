@@ -2,7 +2,7 @@
     <div class="w-full flex flex-col justify-center items-center gap-y-5">
         <div>
             <div class="grid gap-4 grid-cols-2">
-                <button class="shadow-2xl rounded-xl px-[40px] py-[20px] flex flex-col justify-center items-center gap-y-5">
+                <button class="shadow-2xl rounded-xl px-[40px] py-[20px] flex flex-col justify-center items-center gap-y-5" @click="onProductClick(true)">
                     <img :src="milkTeaImg" width="200" class="rounded-xl" />
                     <div class="w-full flex flex-col justify-start items-start gap-x-5">
                         <div class="w-full flex justify-between items-center gap-x-5">
@@ -78,16 +78,28 @@
                 </button>
             </div>
         </div>
+        <Modal :isOpen="isOpen" :onProductClick="onProductClick" />
     </div>
 </template>
 <script>
+import { nextTick } from 'vue';
 import milkTeaImg from '../../../assets/images/milktea.jpg'
+import Modal from '../Modal.vue';
 export default {
-    name: 'MilkteaList',
+    name: "MilkteaList",
     data() {
         return {
-            milkTeaImg
-        }
-    }
+            milkTeaImg,
+            isOpen: false
+        };
+    },
+    methods: {
+        onProductClick(isClick) {
+            nextTick(() => {
+                this.isOpen = isClick
+            })
+        },
+    },
+    components: { Modal }
 }
 </script>

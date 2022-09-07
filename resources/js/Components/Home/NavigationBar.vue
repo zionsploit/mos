@@ -19,6 +19,11 @@ export default {
         return {
             milkTeaIcon
         }
+    },
+    methods: {
+        getResponseData(data) {
+            console.log(data)
+        }
     }
 }
 </script>
