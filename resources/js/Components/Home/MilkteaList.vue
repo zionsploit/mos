@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </button>
-                <button class="shadow-2xl rounded-xl px-[40px] py-[20px] flex flex-col justify-center items-center gap-y-5" >
+                <button class="shadow-2xl rounded-xl px-[40px] py-[20px] flex flex-col justify-center items-center gap-y-5" @click="onProductClick(true)">
                     <img :src="milkteaImg.img6" width="250" height="200" class="rounded-xl" />
                     <div class="w-full flex flex-col justify-start items-start gap-x-5">
                         <div class="w-full flex justify-between items-center gap-x-5">
