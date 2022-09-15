@@ -25,13 +25,9 @@
                     <div class="w-full flex flex-col justify-start items-start border-l-4 border-l-green-300 px-2 py-2 rounded-lg">
                         <span class="font-bold text-gray-600 tracking-wide text-base">SUGAR LEVEL</span>
                         <div class="w-[40em] py-2 gap-x-2 flex justify-between items-center">
-                            <button class="w-full h-[5em] shadow-md rounded-md font-bold text-base tracking-wide text-gray-900 bg-primary flex flex-col justify-center items-center gap-y-2">
-                                <span>No Sugar</span>
-                                <span>0%</span>
-                            </button>
                             <button class="w-full h-[5em] shadow-md rounded-md font-bold text-base tracking-wide text-gray-900 bg-secondary flex flex-col justify-center items-center gap-y-2">
                                 <span>Little Sugar</span>
-                                <span>30%</span>
+                                <span>25%</span>
                             </button>
                             <button class="w-full h-[5em] shadow-md rounded-md font-bold text-base tracking-wide text-gray-900 bg-tertiary flex flex-col justify-center items-center gap-y-2">
                                 <span>Half Sugar</span>
@@ -39,7 +35,7 @@
                             </button>
                             <button class="w-full h-[5em] shadow-md rounded-md font-bold text-base tracking-wide text-gray-900 bg-quarternary flex flex-col justify-center items-center gap-y-2">
                                 <span>Less Sugar</span>
-                                <span>80%</span>
+                                <span>75%</span>
                             </button>
                             <button class="w-full h-[5em] shadow-md rounded-md font-bold text-base tracking-wide text-gray-900 bg-quinary flex flex-col justify-center items-center gap-y-2">
                                 <span>Normal Sugar</span>
@@ -47,12 +43,12 @@
                             </button>
                         </div>
                     </div>
-                    <div class="w-full flex flex-col justify-start items-start border-l-4 border-blue-300 px-2 py-2 rounded-lg">
+                    <!-- <div class="w-full flex flex-col justify-start items-start border-l-4 border-blue-300 px-2 py-2 rounded-lg">
                         <span class="font-bold text-gray-600 tracking-wide text-base">PAYMENT</span>
                         <div class="">
                             <span class="text-lg font-semibold text-gray-600">Php 104.00</span>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="w-full flex justify-start items-center gap-x-4">
                         <button class="w-[10em] bg-green-300 h-[2.5em] rounded shadow-sm font-bold tracking-wide text-gray-600">PROCEED</button>
                         <button class="w-[10em] bg-red-300 active:bg-red-300/80 transition-colors h-[2.5em] rounded shadow-sm font-bold tracking-wide text-gray-600" @click="onProductClick(false)">CLOSE</button>

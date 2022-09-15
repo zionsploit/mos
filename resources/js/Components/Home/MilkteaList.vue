@@ -7,7 +7,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-primary px-3 rounded-xl font-bold tracking-wider font-sans text-gray-600">new</span>
@@ -20,7 +20,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-primary px-3 rounded-xl font-bold tracking-wider font-sans text-gray-600">new</span>
@@ -33,7 +33,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-primary px-3 rounded-xl font-bold tracking-wider font-sans text-gray-600">new</span>
@@ -45,7 +45,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400 line-through">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400 line-through">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-red-500 px-3 rounded-xl font-bold tracking-wider font-sans text-gray-200">SOLD OUT</span>
@@ -57,7 +57,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-primary px-3 rounded-xl font-bold tracking-wider font-sans text-gray-600">new</span>
@@ -69,7 +69,7 @@
                     <div class="w-full flex flex-col justify-start items-start gap-x-5">
                         <div class="w-full flex justify-between items-center gap-x-5">
                             <!-- <span class="font-sans font-bold text-lg tracking-wide text-gray-700/95">BOBA PANDA TEA</span> -->
-                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 140.00</span>
+                            <span class="font-sans font-extrabold text-lg tracking-wide text-red-400">Php 39.00</span>
                         </div>
                         <div class="w-full flex justify-start items-center gap-x-3">
                             <span class="bg-primary px-3 rounded-xl font-bold tracking-wider font-sans text-gray-600">new</span>
