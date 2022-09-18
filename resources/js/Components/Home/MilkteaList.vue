@@ -1,7 +1,7 @@
 <template>
-    <div class="w-full flex flex-col justify-center items-center gap-y-5">
+    <div class="w-full flex flex-col justify-center items-center gap-y-5 py-[70px]">
         <div class="h-[50em] overflow-x-auto pb-[100px] px-[20px]">
-            <div class="grid gap-4 grid-cols-2">
+            <div class="grid gap-4 grid-cols-3">
                 <button class="shadow-2xl rounded-xl px-[40px] py-[20px] flex flex-col justify-center items-center gap-y-5" @click="onProductClick(true)">
                     <img :src="milkteaImg.img1" width="250"  height="200" class="rounded-xl" />
                     <div class="w-full flex flex-col justify-start items-start gap-x-5 gap-y-2">
