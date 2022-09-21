@@ -2,7 +2,9 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,17 @@ use Inertia\Inertia;
 
 Route::get('/', function() {
     return Inertia::render('Home');
+})->name('make');
+
+Route::get('/csh', function() {
+    return Inertia::render('Cashier');
 });
+
+Route::post('/login', [UserController::class, 'login']);
+
+Route::get('/admin', function() {
+    return Inertia::render('Admin');
+})->name('AdminPages');
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');
