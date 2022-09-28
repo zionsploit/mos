@@ -76,7 +76,7 @@
                         <div class="w-[40em] py-2 gap-x-5 flex justify-start items-center">
                             <button 
                                     class="border-2 rounded px-2 py-1 flex flex-col justify-center items-center"
-                                    :class="order.addOns.type === 'creamCheese' ? 'border-amber-600' : 'border-amber-300'"
+                                    :class="order.addOns.some(type => type.type === 'creamCheese') ? 'border-amber-600' : 'border-amber-300'"
                                     @click="onSelectAddOns('creamCheese', 10)"
                                 >
                                 <img :src="creamCheese" width="120" class="rounded-md" />
@@ -87,7 +87,7 @@
                             </button>
                             <button 
                                     class="border-2 rounded px-2 py-1 flex flex-col justify-center items-center"
-                                    :class="order.addOns.type === 'crushedOreo' ? 'border-amber-600' : 'border-amber-300'"
+                                    :class="order.addOns.some(type => type.type === 'crushedOreo') ? 'border-amber-600' : 'border-amber-300'"
                                     @click="onSelectAddOns('crushedOreo', 10)"
                                 >
                                 <img :src="crushedOreo" width="120" class="rounded-md" />
@@ -98,7 +98,7 @@
                             </button>
                             <button 
                                     class="border-2 rounded px-2 py-1 flex flex-col justify-center items-center"
-                                    :class="order.addOns.type === 'pearls' ? 'border-amber-600' : 'border-amber-300'"
+                                    :class="order.addOns.some(type => type.type === 'pearls') ? 'border-amber-600' : 'border-amber-300'"
                                     @click="onSelectAddOns('pearls', 10)"
                                 >
                                 <img :src="pearls" width="120" class="rounded-md" />
@@ -112,65 +112,83 @@
                     <div class="w-full flex flex-col justify-start items-start border-l-4 border-blue-300 px-2 py-2 rounded-lg">
                         <span class="font-bold text-gray-600 tracking-wide text-base">PAYMENT</span>
                         <div class="">
-                            <span class="text-lg font-semibold text-gray-600">Php {{ Number(order.size.value) + Number(order.addOns.value) }}.00</span>
+                            <span class="text-lg font-semibold text-gray-600">Php {{ Number(order.size.value) + Number(getTotalAmount) }}.00</span>
                         </div>
                     </div>
                     <div class="w-full flex justify-start items-center gap-x-4">
-                        <button class="w-[10em] bg-green-300 h-[2.5em] rounded shadow-sm font-bold tracking-wide text-gray-600">PROCEED</button>
+                        <button class="w-[10em] bg-green-300 h-[2.5em] rounded shadow-sm font-bold tracking-wide text-gray-600" @click="onCartClick(true)">PROCEED</button>
                         <button class="w-[10em] bg-red-300 active:bg-red-300/80 transition-colors h-[2.5em] rounded shadow-sm font-bold tracking-wide text-gray-600" @click="onProductClick(false)">CLOSE</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <CartModal :isOpen="isCartOpen" :onProductClick="onCartClick" :data="order" :totalAmount="(getTotalAmount + order.size.value).toString()" />
 </template>
 
 <script>
-    import creamCheese from '../../assets/addons/cream_cheese.jpg'
+import creamCheese from '../../assets/addons/cream_cheese.jpg'
     import crushedOreo from '../../assets/addons/crushed_oreo.jpg'
     import pearls from '../../assets/addons/pearls.jpg'
+    import CartModal from './CartModal.vue'
 
     export default {
-        props: {
-            isOpen: Boolean,
-            onProductClick: Function
-        },
-        data() {
-            return {
-                creamCheese,
-                crushedOreo,
-                pearls,
-                order: {
-                    size: {
-                        type: 'small',
-                        value: 39
-                    },
-                    sugarLevel: {
-                        type: 'normalSugar'
-                    },
-                    addOns: {
-                        type: '',
-                        value: 0
-                    }
-                }
-            }
-        },
-        methods: {
-            onSelectSize(type, value) {
-                this.order.size = {type, value}
+    props: {
+        isOpen: Boolean,
+        onProductClick: Function
+    },
+    data() {
+        return {
+            isCartOpen: false,
+            creamCheese,
+            crushedOreo,
+            pearls,
+            order: {
+                size: {
+                    type: "small",
+                    value: 39
+                },
+                sugarLevel: {
+                    type: "normalSugar"
+                },
+                addOns: []
             },
-            onSelectSugarLevel(type) {
-                this.order.sugarLevel = {type}
-            },
-            onSelectAddOns(type, value) {
-                if (this.order.addOns.type === type) {
-                    this.order.addOns = {type: '', value: 0}
-
-                    return 0
-                }
-                this.order.addOns = {type, value}
-                return 0
-            }
+        };
+    },
+    computed: {
+        getTotalAmount() {
+            let total = 0;
+            this.order.addOns.length > 0 && this.order.addOns.map((data) => total += data.value);
+            return total;
         }
-    }
+    },
+    methods: {
+        onSelectSize(type, value) {
+            this.order.size = { type, value };
+        },
+        onSelectSugarLevel(type) {
+            this.order.sugarLevel = { type };
+        },
+        onSelectAddOns(type, value) {
+            if (this.order.addOns.some(data => data.type === type)) {
+                const newData = [];
+                this.order.addOns.map((data) => {
+                    if (data.type !== type) {
+                        newData.push({ type: data.type, value: data.value });
+                    }
+                });
+                this.order.addOns = newData;
+            }
+            else {
+                this.order.addOns.push({ type, value });
+            }
+            return 0;
+        },
+        onCartClick(isClick) {
+            this.onProductClick(false)
+            this.isCartOpen = isClick
+        },
+    },
+    components: { CartModal }
+}
 </script>
