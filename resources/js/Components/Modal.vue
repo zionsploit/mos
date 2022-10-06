@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    <CartModal :isOpen="isCartOpen" :onProductClick="onCartClick" :data="order" :totalAmount="(getTotalAmount + order.size.value).toString()" />
+    <CartModal :onClearOrder="onClearOrder" :onModifyClick="onModifyClick" :isOpen="isCartOpen" :onProductClick="onCartClick" :data="order" :totalAmount="(getTotalAmount + order.size.value).toString()" />
 </template>
 
 <script>
@@ -188,6 +188,16 @@ import creamCheese from '../../assets/addons/cream_cheese.jpg'
             this.onProductClick(false)
             this.isCartOpen = isClick
         },
+        onModifyClick(isClick) {
+            this.onProductClick(true)
+            this.isCartOpen = isClick
+
+        },
+        onClearOrder() {
+            this.order.addOns = []
+            this.order.size = { type: "small", value: 39 }
+            this.order.sugarLevel = {type: "normalSugar"}
+        }
     },
     components: { CartModal }
 }

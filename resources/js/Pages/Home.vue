@@ -9,6 +9,7 @@
         </div> -->
         <div>
             <MilkteaList />
+            {{getOrderList}}
             <!-- <Addons v-if="tabname === 'addonsList'" /> -->
         </div>
     </div>

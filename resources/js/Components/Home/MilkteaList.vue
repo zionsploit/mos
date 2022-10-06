@@ -103,8 +103,14 @@ import img13 from '../../../assets/milkteaImages/wintermelon.jpg'
 
 
 import Modal from '../Modal.vue';
+import { useOrderStore } from '@/Store/store';
 export default {
     name: "MilkteaList",
+    setup() {
+        const order = useOrderStore()
+        console.log(order.getOrderList)
+        return { order };
+    },
     data() {
         return {
             milkTeaImg,
@@ -123,7 +129,7 @@ export default {
                 img11,
                 img12,
                 img13
-            }
+            },
         };
     },
     methods: {
@@ -133,7 +139,7 @@ export default {
             })
         },
     },
-    components: { Modal, PerfectScrollbar }
+    components: { Modal, PerfectScrollbar },
 }
 </script>
 <style src="vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css"/>
